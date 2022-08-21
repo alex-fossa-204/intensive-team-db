@@ -11,7 +11,6 @@ CREATE TABLE IF NOT EXISTS public.intensive_user
     surname character varying(60),
     date_of_birth timestamp without time zone,
     location character varying(64),
-    contact_id bigint,
     user_uuid uuid,
     PRIMARY KEY (id),
     CONSTRAINT user_uuid_unique_constraint UNIQUE (user_uuid)
@@ -81,6 +80,7 @@ CREATE TABLE IF NOT EXISTS public.contact
     email character varying(64) NOT NULL,
     telegram_login character varying(64),
     github_profile character varying(64),
+    user_id bigint,
     PRIMARY KEY (id),
     CONSTRAINT email_unique_contastraint UNIQUE (email),
     CONSTRAINT phone_number_unique_constraint UNIQUE (phone_number)
@@ -91,14 +91,6 @@ CREATE TABLE IF NOT EXISTS public.users_roles
     credential_id bigint,
     role_id bigint
 );
-
-ALTER TABLE IF EXISTS public.intensive_user
-    ADD CONSTRAINT contact_id_contacts_fk FOREIGN KEY (contact_id)
-    REFERENCES public.contact (id) MATCH SIMPLE
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
-
 
 ALTER TABLE IF EXISTS public.user_technologies
     ADD CONSTRAINT user_id_users_fk FOREIGN KEY (user_id)
@@ -135,6 +127,14 @@ ALTER TABLE IF EXISTS public.roles_privileges
 ALTER TABLE IF EXISTS public.roles_privileges
     ADD CONSTRAINT privilege_id_privileges_fk FOREIGN KEY (privilege_id)
     REFERENCES public.privilege (id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.contact
+    ADD CONSTRAINT user_id_users_fk FOREIGN KEY (user_id)
+    REFERENCES public.intensive_user (id) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
