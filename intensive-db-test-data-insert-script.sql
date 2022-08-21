@@ -118,6 +118,7 @@ BEGIN TRANSACTION;
 	INSERT INTO user_technologies (user_id, technology_id, technology_aprovement_date, technology_level)
 	VALUES
 	(1, 1, '2022-06-15 00:00:00', 'M1'),
+	(1, 2, '2022-06-15 00:00:00', 'J3'),
 	(2, 1, '2022-06-15 00:00:00', 'M1'),
 	(3, 1, '2022-06-15 00:00:00', 'Trainee'),
 	(4, 1, '2022-06-15 00:00:00', 'Trainee'),

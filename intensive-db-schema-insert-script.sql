@@ -30,7 +30,9 @@ CREATE TABLE IF NOT EXISTS public.user_technologies
     user_id bigint,
     technology_id bigint,
     technology_aprovement_date timestamp without time zone,
-    technology_level character varying(32)
+    technology_level character varying(32),
+    id bigint NOT NULL GENERATED ALWAYS AS IDENTITY,
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS public.credential
