@@ -6,7 +6,7 @@ BEGIN TRANSACTION;
 	('user:update'), 
 	('user:delete');
 
-	INSERT INTO user_role (role_name) 
+	INSERT INTO system_role (role_name) 
 	VALUES 
 	('TRAINER-ADMIN'), 
 	('TRAINEE-USER');
@@ -90,30 +90,30 @@ COMMIT TRANSACTION;
 
 BEGIN TRANSACTION;
 
-	INSERT INTO credential (username, password, role_id, registration_date, last_login_date, is_non_locked, is_active, user_id, is_credential_non_expired)
+	INSERT INTO credential (username, password, registration_date, last_login_date, is_non_locked, is_active, user_id, is_credential_non_expired)
 	VALUES
-	('a.privalov01', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('m.bontsevich02', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('s.pavlova34', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('r.kilkaliene16', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('j.frolova33', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('a.krylov', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('g.kairus09', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('a.zavadskaya54', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('p.borovskiy44', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('a.frolovich33', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('v.lomonosov45', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('k.invanov33', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('i.zastavskaya76', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('p.smirnov45', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('a.lomonosova54', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('b.pozdnovich09', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('d.lepnitskaya34', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('r.marchenko21', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('e.prochorenko65', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('s.panasenko34', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('l.tomkus34', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
-	('v.prochorova78', '', 1, '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true);
+	('a.privalov01', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('m.bontsevich02', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('s.pavlova34', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('r.kilkaliene16', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('j.frolova33', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('a.krylov', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('g.kairus09', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('a.zavadskaya54', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('p.borovskiy44', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('a.frolovich33', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('v.lomonosov45', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('k.invanov33', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('i.zastavskaya76', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('p.smirnov45', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('a.lomonosova54', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('b.pozdnovich09', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('d.lepnitskaya34', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('r.marchenko21', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('e.prochorenko65', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('s.panasenko34', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('l.tomkus34', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true),
+	('v.prochorova78', '', '2022-06-15 00:00:00', '2022-06-15 00:00:00', true, true, 1, true);
 	
 	INSERT INTO user_technologies (user_id, technology_id, technology_aprovement_date, technology_level)
 	VALUES
@@ -140,5 +140,32 @@ BEGIN TRANSACTION;
 	(21, 1, '2022-06-15 00:00:00', 'Trainee'),
 	(22, 1, '2022-06-15 00:00:00', 'Trainee');
 
+COMMIT TRANSACTION;
+
+BEGIN TRANSACTION;
+	INSERT INTO users_roles (credential_id, role_id)
+	VALUES
+	(1,1),
+	(2,2),
+	(3,2),
+	(4,2),
+	(5,2),
+	(6,2),
+	(7,2),
+	(8,2),
+	(9,2),
+	(10,2),
+	(11,2),
+	(12,2),
+	(13,2),
+	(14,2),
+	(15,2),
+	(16,2),
+	(17,2),
+	(18,2),
+	(19,2),
+	(20,2),
+	(21,2),
+	(22,2);
 COMMIT TRANSACTION;
 
